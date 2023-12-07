@@ -1,0 +1,43 @@
+server:
+  servlet:
+    context-path: /dev/tms-apiux-satmanifestmanager
+  port: 8080
+
+app:
+  environment: develop
+  useProxy: false
+  ignoreSession: false
+  allowedOrigins: "*"
+  allowedMethods: GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD
+  allowedHeaders: Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods,Accept,Authorization,Content-Type,Method,Origin,X-Forwarded-For,X-Real-IP
+  exposedHeaders: X-Get-Header
+
+proxy:
+  ip: 10.33.128.80
+  port: 8080
+
+web-services:
+  - name: tms-cap-crossdocking
+    url: https://cedisdev.coppel.io:20541/dev/tms-cap-crossdocking
+    useProxy: false
+  - name: tms-cap-shipping
+    url: https://cedisdev.coppel.io:20541/dev/tms-cap-shipping
+    useProxy: false
+  - name: tms-sys-folioservicio
+    url: http://progcedisapp.coppel.io:17080/dev/tms-sys-folioservicio
+    useProxy: false
+  - name: tms-cap-transfersbetweenlocations
+    url: https://cedisdev.coppel.io:20541/dev/tms-cap-transfersbetweenlocations
+    useProxy: false
+  - name: tms-sys-businessunits
+    url: http://localhost:8081/dev/tms-sys-businessunits
+    useProxy: false
+  - name: tms-proc-satmanifest
+    url: http://localhost:8082/dev/tms-proc-satmanifest
+    useProxy: false
+  - name: tms-cap-logisticsplanning
+    url: https://cedisdev.coppel.io:20541/dev/tms-sys-logisticsplanning
+    useProxy: false
+  - name: proc-sendemail
+    url: https://cedisdev.coppel.io:20541/dev/api/v1/sendemail
+    useProxy: false
